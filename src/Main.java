@@ -2,27 +2,28 @@ public class Main {
 
     static class A {
         int val = 1;
-        int f(){
+        protected int f() throws Exception {
             return 1;
         }
     }
 
     static class B extends A {
         int val = 2;
-        int f(){
+        public int f() {
             return 2;
         }
     }
 
     static class C extends B {
         int val = 3;
-        int f(){
+        int f() // throws Exception // error
+        {
             return 3;
         }
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         C c = new C();
         A a = c;
 
