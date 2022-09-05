@@ -1,5 +1,7 @@
 public class Main {
 
+
+
     static class A {
         int val = 1;
         protected int f() throws Exception {
@@ -16,22 +18,24 @@ public class Main {
 
     static class C extends B {
         int val = 3;
-        int f() // throws Exception // error
+        public int f() // throws Exception // error
         {
             return 3;
         }
     }
 
 
+
     public static void main(String[] args) throws Exception {
         C c = new C();
-        A a = c;
+        int valc = c.val;
+        int fc = c.f();
 
+        A a = c;
         int vala = a.val;
         int fa = a.f();
 
         B b = (B)a;
-
         int valb = b.val;
         int fb = b.f();
 
